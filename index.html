@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="Website Icon" type="png"
+    href="static/h.png">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Huja-Burger</title>
+    <style>
+        body {
+            margin: 0; /* Odstraní vnější okraj pro celou stránku */
+            background-color: rgb(255, 255, 255);
+        }
+        /* Přizpůsobte velikost loga dle potřeby */
+        .logo {
+            width: 123px;
+            height: 71.7px;
+            margin: 0.5px;
+        }
+
+        /* Styl pro modré zápatí */
+        .footer {
+            margin-top: 1200px;
+            background-color: rgb(255, 255, 255); /* Modrá barva pozadí */
+            color: rgb(0, 0, 0); /* Bílá barva textu */
+            padding: 40px;
+            display: flex;
+            font-weight: bold;
+            align-items: center; /* Zarovnání textu na střed */
+        }
+        
+        .header-2 {
+            display: flex;
+            background-color: rgb(8, 8, 113);
+            padding: 0px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header {
+            position: fixed; /* Pevná pozice */
+            top: 0; /* Hlavička bude zobrazena nahoře na obrazovce */
+            left: 0;
+            width: 100%;
+            display: flex;
+            background-color: rgb(8, 8, 113);
+            padding: 0px;
+            text-decoration: none;
+            font-size: 23px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+        }
+
+        .menu-buttons {
+            display: flex;
+        }
+
+        .menu-button {
+            margin-right: 30px;
+            margin-top: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 23px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .menu-button:hover {
+            text-decoration: underline;
+            font-size: 26px;
+            margin-top: 2px;
+        }
+        /* Nový styl pro tlačítko Přílohy */
+        .attachment-button {
+            margin-right: 30px;
+            margin-top: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 23px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .attachment-button:hover {
+            text-decoration: underline;
+            font-size: 26px;
+            margin-top: 2px;
+        }
+
+        /* Styl pro tlačítko s obrázkem telefonu */
+        .phone-button {
+            width: 40px;
+            height: 40px;
+            background-image: url("/static/phone 1.png"); /* Změňte na cestu k obrázku telefonu */
+            background-size: cover;
+            cursor: pointer;
+            margin-right: 40px;
+        }
+        .phone-button:hover {
+            width: 45px;
+            height: 45px;
+        }
+
+        /* Nový styl pro velký pruh s obrázkem */
+        .large-banner {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Výška velkého pruhu */
+            background-image: url("/static/burger banner 6.png"); /* Změňte na cestu k vašemu obrázku */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .otevírací-doba-text {
+            color: black;
+            font-size: 45px; /* Zvětšíme velikost textu */
+            font-weight: bold;
+            margin-top: 110px; /* Odsazení od obrázku */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+
+
+        
+        .doba-text-1 {
+            color: black;
+            font-size: 30px;
+            margin-top: 65px; 
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .doba-text-2 {
+            color: black;
+            font-size: 30px;
+            margin-top: 20px; 
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .místo-text-1 {
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 4%; 
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+    .black-line {
+        position: absolute;
+        margin-top: 2%; /* Výška nad textem 'Burger menu' */
+        width: 30%;
+        height: 3px;
+        background-color: rgb(8, 8, 113);
+        left: 35%;
+    }
+
+
+
+
+    .burger-menu-text {
+            color: black;
+            font-size: 45px;
+            font-weight: bold;
+            margin-top: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    /* Nový styl pro modrou čáru */
+    .blue-line {
+        position: absolute;
+        margin-top: 4%; /* Výška nad textem 'Burger menu' */
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+    .overlay-rectangle {
+        position: absolute;
+        margin-top: 4.2%; /* Odsazení od vrchního okraje stránky */
+        left: 0;
+        width: 100%;
+        height: 59px; /* Výška obdélníku */
+        background-color: rgb(246, 246, 246);
+    }
+
+    .blue-line-2 {
+        position: absolute;
+        margin-top: 0.3%; /* Výška nad textem 'Burger menu' */
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+
+
+
+    .burger-menu-text-2 {
+            color: black;
+            font-size: 45px; /* Zvětšíme velikost textu */
+            font-weight: bold;
+            margin-top: 1px; /* Odsazení od obrázku */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+            /* Nový styl pro modrou čáru */
+    .blue-line-1-1 {
+        position: absolute;
+        margin-top: 3150px; /* Výška nad textem 'Burger menu' */
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+    .overlay-rectangle-2 {
+        position: absolute;
+        margin-top: 2px; /* Odsazení od vrchního okraje stránky */
+        left: 0;
+        width: 100%;
+        height: 59px; /* Výška obdélníku */
+        background-color: rgb(246, 246, 246);
+    }
+
+    .blue-line-1-2 {
+        position: absolute;
+        margin-top: -61px; /* Výška nad textem 'Burger menu' */
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+        
+        
+
+
+        
+
+
+
+
+        /* Nový styl pro vystupující obdélník */
+        .center-box-1-1 {
+            position: absolute;
+            margin-top: 20%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        /* Styl pro obrázek v obdélníku */
+        .burger-image-1-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+    /* Nový styl pro druhý obdélník */
+    .center-box-1-2 {
+        position: absolute;
+        margin-top: 20%;
+        width: 300px;
+        height: 200px;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top; 
+    }
+    /* Styl pro text v novém obdélníku */
+    .burger-text-1-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .center-box-1-3 {
+        position: absolute;
+        margin-top: 12%;
+        width: 500px;
+        height: 40px;
+        left: 43%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-1-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px; /* Odsazení textu od horního textu */
+        margin-left: 50px; /* Odsazení textu od levého okraje obdélníku */
+    }
+
+    .cena-box-1 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran72 */
+        display: flex;
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-1 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 5px;
+    }
+        
+    
+        
+        
+        .center-box-2-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        /* Styl pro obrázek v obdélníku */
+        .burger-image-2-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+    /* Nový styl pro druhý obdélník */
+    .center-box-2-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top; 
+    }
+    /* Styl pro text v novém obdélníku */
+    .burger-text-2-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .center-box-2-3 {
+        position: absolute;
+        margin-top: 55%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-2-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px; /* Odsazení textu od horního textu */
+        margin-left: 50px; /* Odsazení textu od levého okraje obdélníku */
+    }
+    .cena-box-2 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-2 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-3-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        /* Styl pro obrázek v obdélníku */
+        .burger-image-3-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+    /* Nový styl pro druhý obdélník */
+    .center-box-3-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top; 
+    }
+    /* Styl pro text v novém obdélníku */
+    .burger-text-3-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .center-box-3-3 {
+        position: absolute;
+        margin-top: 57%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-3-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px; /* Odsazení textu od horního textu */
+        margin-left: 50px; /* Odsazení textu od levého okraje obdélníku */
+    }
+
+    .cena-box-3 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-3 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-4-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        /* Styl pro obrázek v obdélníku */
+        .burger-image-4-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+    /* Nový styl pro druhý obdélník */
+    .center-box-4-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top; 
+    }
+    /* Styl pro text v novém obdélníku */
+    .burger-text-4-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .center-box-4-3 {
+        position: absolute;
+        margin-top: 57%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-4-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px; /* Odsazení textu od horního textu */
+        margin-left: 50px; /* Odsazení textu od levého okraje obdélníku */
+    }
+
+    .cena-box-4 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-4 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-5-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        /* Styl pro obrázek v obdélníku */
+        .burger-image-5-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+    /* Nový styl pro druhý obdélník */
+    .center-box-5-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top; 
+    }
+    /* Styl pro text v novém obdélníku */
+    .burger-text-5-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; /* Odsazení textu od levého okraje obdélníku */
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .center-box-5-3 {
+        position: absolute;
+        margin-top: 58%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-5-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px; /* Odsazení textu od horního textu */
+        margin-left: 50px; /* Odsazení textu od levého okraje obdélníku */
+    }
+
+    .cena-box-5 {
+        position: absolute;
+        margin-top: 41%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px; /* Více ostrých stran */
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-5 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-6-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        .burger-image-6-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+
+    .center-box-6-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top; 
+    }
+    .burger-text-6-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+    .center-box-6-3 {
+        position: absolute;
+        margin-top: 58%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-6-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+
+    .cena-box-6 {
+        position: absolute;
+        margin-top: 41%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-6 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-7-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        .burger-image-7-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+
+    .center-box-7-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top; 
+    }
+    .burger-text-7-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+    .center-box-7-3 {
+        position: absolute;
+        margin-top: 56%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-7-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+
+    .cena-box-7 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 99%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-7 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-8-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px; /* Více ostrých stran */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        .burger-image-8-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+
+    .center-box-8-2 {
+        position: absolute;
+        margin-top: 91%;
+        width: 430px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top; 
+    }
+    .burger-text-8-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 20px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+    .center-box-8-3 {
+        position: absolute;
+        margin-top: 54%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-8-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+
+    .cena-box-8 {
+        position: absolute;
+        margin-top: 30%;
+        width: 50px;
+        height: 30px;
+        margin-left: 80%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-8 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-9-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+
+        .burger-image-9-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+
+    .center-box-9-2 {
+        position: absolute;
+        margin-top: 66%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top; 
+    }
+    .burger-text-9-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+    .center-box-9-3 {
+        position: absolute;
+        margin-top: 61%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-9-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+
+    .cena-box-9 {
+        position: absolute;
+        margin-top: 40%;
+        width: 50px;
+        height: 30px;
+        margin-left: 98%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-9 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    .center-box-10-1 {
+            position: absolute;
+            margin-top: 47%;
+            width: 780px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(246, 246, 246);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex; 
+            align-items: top; 
+        }
+        .burger-image-10-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+    
+
+    .center-box-10-2 {
+        position: absolute;
+        margin-top: 93%;
+        width: 300px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top; 
+    }
+    .burger-text-10-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+    .center-box-10-3 {
+        position: absolute;
+        margin-top: 58%;
+        width: 500px;
+        height: 40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+    }
+    .okurky-text-10-3 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+
+    .cena-box-10 {
+        position: absolute;
+        margin-top: 41%;
+        width: 50px;
+        height: 30px;
+        margin-left: 97%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex; 
+        align-items: top;
+        z-index: 99;
+    }
+    .cena-10 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px;
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+
+    .special-menu {
+        position: absolute;
+        margin-top: 530px;
+        width: 800px;
+        height: 20px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        border-radius: 2px;
+        display: flex;
+        align-items: top; 
+    }
+    .special-menu-text {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px;
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+
+
+
+
+
+
+    .přílohy-box-1 {
+        position: absolute;
+        margin-top: 300px;
+        width: 780px;
+        height: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-image-1 {
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        }
+    
+    .přílohy-box-1-2 {
+        position: absolute;
+        margin-top: 40px;
+        width: 300px;
+        height: 50px;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; 
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-text-1 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; 
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .přílohy-cena-box-1 {
+        position: absolute;
+        margin-top: 50%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: top;
+        z-index: 99;
+    }
+    .přílohy-cena-1 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; 
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+    
+    .přílohy-box-2 {
+        position: absolute;
+        margin-top: 520px;
+        width: 780px;
+        height: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-image-2 {
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        }
+    
+    .přílohy-box-2-2 {
+        position: absolute;
+        margin-top: 40px;
+        width: 300px;
+        height: 50px;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; 
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-text-2 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; 
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .přílohy-cena-box-2 {
+        position: absolute;
+        margin-top: 50%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: top;
+        z-index: 99;
+    }
+    .přílohy-cena-2 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; 
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+
+
+
+
+
+    .přílohy-box-3 {
+        position: absolute;
+        margin-top: 800px;
+        width: 780px;
+        height: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-image-3 {
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        }
+    
+    .přílohy-box-3-2 {
+        position: absolute;
+        margin-top: 40px;
+        width: 300px;
+        height: 50px;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; 
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-text-3 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; 
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .přílohy-cena-box-3 {
+        position: absolute;
+        margin-top: 50%;
+        width: 50px;
+        height: 30px;
+        margin-left: 115%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: top;
+        z-index: 99;
+    }
+    .přílohy-cena-3 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; 
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+
+
+
+
+
+    .přílohy-box-4 {
+        position: absolute;
+        margin-top: 1080px;
+        width: 780px;
+        height: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-image-4 {
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        }
+    
+    .přílohy-box-4-2 {
+        position: absolute;
+        margin-top: 40px;
+        width: 300px;
+        height: 50px;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246); 
+        padding: 10px;
+        border-radius: 5px; 
+        display: flex; 
+        align-items: top; 
+    }
+    .přílohy-text-4 {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1px; 
+        font-weight: bold;
+        margin-top: 1px;
+    }
+
+    .přílohy-cena-box-4 {
+        position: absolute;
+        margin-top: 50%;
+        width: 50px;
+        height: 30px;
+        margin-left: 100%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(246, 246, 246);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: top;
+        z-index: 99;
+    }
+    .přílohy-cena-4 {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0px; 
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+
+
+
+    .google-map {
+        padding-bottom: 50%;
+        position: relative;
+    }
+
+    .google-map iframe {
+        height: 60%;
+        width: 100%;
+        left: 0;
+        margin-top: 1400px;
+        position: absolute;
+    }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/huja burger logo 2.png" alt="Logo" class="logo">
+        <div class="menu-buttons">
+            <a href="javascript:void(0);" onclick="scrollToOtevíracídoba()" class="menu-button">Otevírací doba</a>
+            <a href="javascript:void(0);" onclick="scrollToBurgerMenu()" class="menu-button">Menu</a>
+            <a href="javascript:void(0);" onclick="scrollToBurgerMenu2()" class="attachment-button">Přílohy</a>
+            <a href="tel:+420776422538" class="phone-button" title="Zavolat"></a>
+        </div>
+    </div>
+
+    <div class="header-2">
+        <img src="/static/huja burger logo 2.png" alt="Logo" class="logo">
+        <div class="menu-buttons">
+            <!-- Tlačítko Menu s JavaScriptem pro smooth scrolling -->
+            <a href="javascript:void(0);" onclick="scrollToBurgerMenu()" class="menu-button">Menu</a>
+            <a href="javascript:void(0);" onclick="scrollToBurgerMenu2()" class="attachment-button">Přílohy</a>
+            <a href="javascript:void(0);" onclick="scrollToOtevíracídoba()" class="doba-button">Otevírací doba</a>
+            <a href="tel:+420776422538" class="phone-button" title="Zavolat"></a>
+        </div>
+    </div>
+
+
+
+    <!-- Velký pruh s obrázkem a textem -->
+    <div class="large-banner">
+    </div>
+
+    
+
+
+    
+    <div id="doba-menu" class="otevírací-doba-text">Otevírací doba
+        <div class="black-line"></div>
+    </div>
+    <div id="doba-text" class="doba-text-1"> pondělí - pátek: 15:00 - 20:00</div>
+    <div id="doba-text" class="doba-text-2"> sobota a neděle: 11:00 - 20:00</div>
+
+        <div id="doba-text" class="místo-text-1"> Čechova 264, Borohrádek, Česko
+            <div class="blue-line"></div>
+            <div class="overlay-rectangle">
+                <div id="burger-menu" class="burger-menu-text">Burger menu
+                    <div class="blue-line-2">
+                        <div class="center-box-1-1">
+                            <img src="/static/burger 1.png" alt="Burger 1" class="burger-image">
+                            <div class="center-box-2-1">
+                                <img src="/static/burger 1.png" alt="Burger 2" class="burger-image">
+                                <div class="center-box-3-1">
+                                    <img src="/static/burger 1.png" alt="Burger 3" class="burger-image">
+                                    <div class="center-box-4-1">
+                                        <img src="/static/burger 1.png" alt="Burger 4" class="burger-image">
+                                        <div class="center-box-5-1">
+                                            <img src="/static/burger 1.png" alt="Burger 5" class="burger-image">
+                                            <div class="center-box-6-1">
+                                                <img src="/static/burger 1.png" alt="Burger 6" class="burger-image">
+                                                <div class="center-box-7-1">
+                                                    <img src="/static/burger 1.png" alt="Burger 7" class="burger-image">
+                                                    <div class="center-box-8-1">
+                                                        <img src="/static/burger 1.png" alt="Burger 8" class="burger-image">
+                                                        <div class="center-box-9-1">
+                                                            <img src="/static/burger 1.png" alt="Burger 9" class="burger-image">
+                                                            <div class="center-box-10-1">
+                                                                <img src="/static/burger 1.png" alt="Burger 10" class="burger-image">
+                                                            </div><div class="special-menu">
+                                                                <div class="special-menu-text">  <!-- Každý burger jde dát do menu (burger+hranolky+točená limonáda/pepsi) --> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-box-1-2">
+                            <div class="burger-text-1-2">CLASSIC BURGER
+                                <div class="cena-box-1">
+                                    <div class="cena-1">149Kč</div>
+                                </div>
+                                <div class="center-box-1-3">
+                                    <div class="okurky-text-1-3">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, rajče salát, cibule, dresing</div>
+                                    <div class="center-box-2-3">
+                                        <div class="okurky-text-2-3">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, cibule, křupavá slanina, sýr cheddar, salát, rajče, dresing</div>
+                                        <div class="center-box-3-3">
+                                            <div class="okurky-text-3-3">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, křupavá slanina, rajče, salát, karamelizovaná cibulka a barbeque omáčka</div>
+                                            <div class="center-box-4-3">
+                                                <div class="okurky-text-4-3">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, karamelizovaná cibulka, žampiony, rajče, salát, dresing</div>
+                                                <div class="center-box-5-3">
+                                                    <div class="okurky-text-5-3">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, karamelizovaná cibulka, sázené volské oko, rajče, salát, dresing</div>
+                                                    <div class="center-box-6-3">
+                                                        <div class="okurky-text-6-3">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, kyselá okurka, cibulka, rajče, salát, papričky Jalapeňo, pikantní dresing Samurai</div>
+                                                        <div class="center-box-7-3">
+                                                            <div class="okurky-text-7-3">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, cibule, rajče, salát, modrý sýr niva, dresing</div>
+                                                            <div class="center-box-8-3">
+                                                                <div class="okurky-text-8-3">Šťavnaté trhané vepřové maso (150g), rozpečená bulka, kyselá okurka, křupavá slanina, cibule, rajče, salát, česnekový dresing, BBQ omáčka (POUZE VÍKENDOVĚ PÁ-NE)</div>
+                                                                <div class="center-box-9-3">
+                                                                    <div class="okurky-text-9-3">Kuřecí stripsy(3 kusy), rozpečená bulka, kyselá okurka, chedar, rajče, salát, BBQ omáčka, dresing</div>
+                                                                    <div class="center-box-10-3">
+                                                                        <div class="okurky-text-10-3">Smažený sýr, slanina, rozpečená bulka, rajče, salát, dresing
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="center-box-2-2">
+                                <div class="burger-text-2-2">CHEESE BURGER
+                                    <div class="cena-box-2">
+                                        <div class="cena-2">159Kč</div>
+                                    </div>
+                                </div>
+                                <div class="center-box-3-2">
+                                    <div class="burger-text-3-2">BBQ BURGER
+                                        <div class="cena-box-3">
+                                            <div class="cena-3">159Kč</div>
+                                        </div>
+                                    </div>
+                                    <div class="center-box-4-2">
+                                        <div class="burger-text-4-2">FOREST BURGER
+                                            <div class="cena-box-4">
+                                                <div class="cena-4">169Kč</div>
+                                            </div>
+                                        </div>
+                                        <div class="center-box-5-2">
+                                            <div class="burger-text-5-2">BEST BURGER
+                                                <div class="cena-box-5">
+                                                    <div class="cena-5">169Kč</div>
+                                                </div>
+                                            </div>
+                                            <div class="center-box-6-2">
+                                                <div class="burger-text-6-2">SAMURAI BURGER
+                                                    <div class="cena-box-6">
+                                                        <div class="cena-6">159Kč</div>
+                                                    </div>
+                                                </div>
+                                                <div class="center-box-7-2">
+                                                    <div class="burger-text-7-2">BLUE BURGER
+                                                        <div class="cena-box-7">
+                                                            <div class="cena-7">169Kč</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="center-box-8-2">
+                                                        <div class="burger-text-8-2">PULLED PORK BURGER
+                                                            <div class="cena-box-8">
+                                                                <div class="cena-8">149Kč</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="center-box-9-2">
+                                                            <div class="burger-text-9-2">CHICKEN BURGER
+                                                                <div class="cena-box-9">
+                                                                    <div class="cena-9">149Kč</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="center-box-10-2">
+                                                                <div class="burger-text-10-2">SÝROVÝ BURGER
+                                                                    <div class="cena-box-10">
+                                                                        <div class="cena-10">119Kč
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="blue-line-1-1">
+        <div class="blue-line-1-2">
+    <div class="overlay-rectangle-2">
+        <div id="burger-menu-2" class="burger-menu-text-2">Přílohy</div>
+    </div>
+    <div class="přílohy-box-1">
+        <img src="/static/hranolky.png" class="burger-image">
+        <div class="přílohy-box-1-2">
+            <div class="přílohy-text-1">HRANOLKY <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: smaller;">150g</span></div>
+                <div class="přílohy-cena-box-1">
+                    <div class="přílohy-cena-1">55Kč</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="přílohy-box-2">
+        <img src="/static/kroužky.png" class="burger-image">
+        <div class="přílohy-box-2-2">
+            <div class="přílohy-text-2">CIBULOVÉ KROUŽKY <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: smaller;">10ks</span></div>
+                <div class="přílohy-cena-box-2">
+                    <div class="přílohy-cena-2">70Kč</div>
+                </div>
+            </div>
+        </div>
+    <div class="přílohy-box-3">
+        <img src="/static/salát.png"  class="burger-image">
+        <div class="přílohy-box-3-2">
+            <div class="přílohy-text-3">SALÁT COLESLAW <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: smaller;">150g</span></div>
+                <div class="přílohy-cena-box-3">
+                    <div class="přílohy-cena-3">39Kč</div>
+                </div>
+            </div>
+        </div>
+    <div class="přílohy-box-4">
+        <img src="/static/maso.png" class="burger-image">
+        <div class="přílohy-box-4-2">
+            <div class="přílohy-text-4">MASO NAVÍC <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: smaller;">175g</span></div>
+                <div class="přílohy-cena-box-4">
+                    <div class="přílohy-cena-4">85Kč</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4901.813142299633!2d16.090111806476735!3d50.09719240830091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddbbdd74ee56d%3A0xd5b6a28c98f34bc7!2sHuja%20Burger!5e0!3m2!1scs!2scz!4v1691768922115!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+
+    <div class="footer">
+        <p>Huja Burger <br> Autorská práva © 2023 Všechna práva vyhrazena.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <div class="wrapper">
+            
+            <a href="https://www.facebook.com/profile.php?id=100057360073443" target="_blank" rel="noopener noreferrer">
+            <div class="icon facebook">
+                <div class="tooltip">Facebook</div>
+                <span><i class="fab fa-facebook-f"></i></span>
+            </div>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+        function scrollToOtevíracídoba() {
+            var targetElement = document.getElementById("doba-menu");
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest", duration: 1000 });
+        }
+        
+        function scrollToBurgerMenu() {
+            var targetElement = document.getElementById("burger-menu");
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest", duration: 1000 });
+        }
+        
+        function scrollToBurgerMenu2() {
+            var targetElement = document.getElementById("burger-menu-2");
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest", duration: 1000 });
+        }
+    </script>
+    
+
+</body>
+</html>
