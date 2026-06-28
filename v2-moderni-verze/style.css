@@ -1,0 +1,583 @@
+/* =========================================
+   Základní nastavení (Reset a Proměnné)
+   ========================================= */
+:root {
+    --primary-brand: #080871; /* Originální modrá - ponechána pro věrnost značce */
+    --accent-color: #ff5722; /* Hřejivá oranžovo-červená barva (chuť k jídlu) */
+    --accent-hover: #e64a19;
+    --bg-main: #ffffff;
+    --bg-card: #f6f6f6; /* Odpovídá původní rgb(246, 246, 246) */
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 45px rgba(8, 8, 113, 0.15);
+    --border-radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   Navigace (Header)
+   ========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--primary-brand);
+    z-index: 1000;
+    padding: 10px 0;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    position: relative;
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--accent-color);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.phone-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.phone-icon {
+    font-size: 1.2rem;
+}
+
+.phone-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
+}
+
+/* =========================================
+   Hero Sekce
+   ========================================= */
+.hero {
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    background-image: url('assets/burger banner 6.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* =========================================
+   Společné styly pro sekce
+   ========================================= */
+section {
+    padding: 100px 0;
+    /* DŮLEŽITÉ: Oprava překrývání menu nad titulky sekcí */
+    scroll-margin-top: 80px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-brand);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.divider {
+    height: 5px;
+    width: 60px;
+    background-color: var(--accent-color);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* =========================================
+   Info Sekce (Otevírací doba)
+   ========================================= */
+.info-section {
+    background-color: var(--bg-card);
+    position: relative;
+    z-index: 5;
+    margin-top: -50px;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-card {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-main);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    background: white;
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.info-title {
+    font-size: 1.5rem;
+    color: var(--primary-brand);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hours-list {
+    list-style: none;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.hours-list .time {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.location-desc {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.location-address {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* =========================================
+   Menu a Přílohy
+   ========================================= */
+.special-note {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 20px;
+    background: rgba(255, 87, 34, 0.1);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   Karta jídla (Food Card)
+   ========================================= */
+.food-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.food-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background-color: var(--bg-card); /* Aby splynulo s fotkou */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain; /* Pro PNG s průhledností je tohle lepší */
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.15));
+}
+
+.food-card:hover .food-image {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.price-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-brand);
+    color: white;
+    font-weight: 800;
+    font-size: 1.3rem;
+    padding: 8px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(8, 8, 113, 0.3);
+}
+
+.hot-tag {
+    background: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.food-details {
+    padding: 25px;
+    text-align: center;
+}
+
+.food-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary-brand);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.food-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.weight {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+}
+
+/* =========================================
+   Sekce Přílohy
+   ========================================= */
+.sides-section {
+    background-color: var(--primary-brand);
+    color: white;
+}
+
+.sides-section .section-title {
+    color: white;
+}
+
+.side-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.side-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.side-card .food-name {
+    color: white;
+}
+
+.side-card .img-wrapper {
+    background-color: transparent;
+    height: 220px;
+}
+
+.side-card .price-tag {
+    background: var(--accent-color);
+}
+
+/* =========================================
+   Mapa
+   ========================================= */
+.map-section {
+    padding: 0;
+    line-height: 0;
+}
+
+/* =========================================
+   Patička
+   ========================================= */
+.footer {
+    background-color: var(--primary-brand); /* Nyní přesně odpovídá pozadí loga! */
+    color: white;
+    padding: 80px 0 20px;
+    border-top: 5px solid var(--accent-color); /* Pěkné oddělení od mapy */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-brand .footer-logo {
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+.footer h4 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links ul a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact i {
+    color: var(--accent-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   Responzivita
+   ========================================= */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-brand p {
+        margin: 0 auto;
+    }
+    
+    .footer h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huja-Burger - To pravé pro gurmány</title>
+    <link rel="icon" type="image/png" href="assets/h.png">
+    <!-- Font Awesome pro ikonky -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Hlavní CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigace -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="assets/huja burger logo 2.png" alt="Huja Burger Logo" class="logo">
+            </a>
+            <nav class="nav-links">
+                <a href="#info" class="nav-item">Otevírací doba</a>
+                <a href="#menu" class="nav-item">Menu</a>
+                <a href="#sides" class="nav-item">Přílohy</a>
+            </nav>
+            <a href="tel:+420776422538" class="phone-button" title="Zavolat nám">
+                <i class="fa-solid fa-phone phone-icon"></i>
+                <span class="phone-text">Zavolat hned</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Sekce -->
+        <section class="hero" id="home">
+            <!-- Původní banner s textem uvnitř obrázku -->
+        </section>
+
+        <!-- Informace (Otevírací doba) -->
+        <section class="info-section" id="info">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fa-solid fa-clock info-icon"></i>
+                        <h2 class="info-title">Otevírací doba</h2>
+                        <ul class="hours-list">
+                            <li><span>Pondělí - Pátek</span> <span class="time">15:00 - 20:00</span></li>
+                            <li><span>Sobota - Neděle</span> <span class="time">11:00 - 20:00</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-location-dot info-icon"></i>
+                        <h2 class="info-title">Kde nás najdete</h2>
+                        <p class="location-desc">Přijďte k nám na adresu:</p>
+                        <p class="location-address">Čechova 264, Borohrádek<br>Česko</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu sekce (Burgery) -->
+        <section class="menu-section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Burger menu</h2>
+                    <div class="divider"></div>
+                    <p class="special-note"><i class="fa-solid fa-star"></i> TIP: Každý burger jde dát do menu (burger + hranolky + točená limonáda/pepsi) <i class="fa-solid fa-star"></i></p>
+                </div>
+                
+                <div class="grid-container">
+                    <!-- Burger 1 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Classic Burger" class="food-image">
+                            <div class="price-tag">149 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Classic Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, rajče, salát, cibule, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 2 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Cheese Burger" class="food-image">
+                            <div class="price-tag">159 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Cheese Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, cibule, křupavá slanina, sýr cheddar, salát, rajče, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 3 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="BBQ Burger" class="food-image">
+                            <div class="price-tag">159 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">BBQ Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, kyselá okurka, křupavá slanina, rajče, salát, karamelizovaná cibulka a barbeque omáčka</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 4 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Forest Burger" class="food-image">
+                            <div class="price-tag">169 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Forest Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, karamelizovaná cibulka, žampiony, rajče, salát, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 5 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Best Burger" class="food-image">
+                            <div class="price-tag hot-tag">169 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Best Burger <i class="fa-solid fa-fire text-accent"></i></h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, karamelizovaná cibulka, sázené volské oko, rajče, salát, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 6 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 6.png" alt="Samurai Burger" class="food-image">
+                            <div class="price-tag">159 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Samurai Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, kyselá okurka, cibulka, rajče, salát, papričky Jalapeňo, pikantní dresing Samurai</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 7 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Blue Burger" class="food-image">
+                            <div class="price-tag">169 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Blue Burger</h3>
+                            <p class="food-desc">Šťavnaté hovězí maso, rozpečená bulka, sýr Cheddar, křupavá slanina, cibule, rajče, salát, modrý sýr niva, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 8 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Pulled Pork Burger" class="food-image">
+                            <div class="price-tag weekend-tag">149 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Pulled Pork Burger</h3>
+                            <p class="food-desc">Šťavnaté trhané vepřové maso (150g), rozpečená bulka, kyselá okurka, křupavá slanina, cibule, rajče, salát, česnekový dresing, BBQ omáčka. <br><strong class="text-accent">POUZE VÍKENDOVĚ PÁ-NE</strong></p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 9 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Chicken Burger" class="food-image">
+                            <div class="price-tag">149 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Chicken Burger</h3>
+                            <p class="food-desc">Kuřecí stripsy (3 kusy), rozpečená bulka, kyselá okurka, chedar, rajče, salát, BBQ omáčka, dresing</p>
+                        </div>
+                    </article>
+
+                    <!-- Burger 10 -->
+                    <article class="food-card">
+                        <div class="img-wrapper">
+                            <img src="assets/burger 1.png" alt="Sýrový Burger" class="food-image">
+                            <div class="price-tag">119 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Sýrový Burger</h3>
+                            <p class="food-desc">Smažený sýr, slanina, rozpečená bulka, rajče, salát, dresing</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekce Přílohy -->
+        <section class="sides-section" id="sides">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Něco k tomu?</h2>
+                    <div class="divider"></div>
+                </div>
+                
+                <div class="grid-container">
+                    <article class="food-card side-card">
+                        <div class="img-wrapper">
+                            <img src="assets/hranolky.png" alt="Hranolky" class="food-image">
+                            <div class="price-tag">55 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Hranolky <span class="weight">150g</span></h3>
+                        </div>
+                    </article>
+
+                    <article class="food-card side-card">
+                        <div class="img-wrapper">
+                            <img src="assets/kroužky.png" alt="Cibulové kroužky" class="food-image">
+                            <div class="price-tag">70 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Cibulové kroužky <span class="weight">10ks</span></h3>
+                        </div>
+                    </article>
+
+                    <article class="food-card side-card">
+                        <div class="img-wrapper">
+                            <img src="assets/salát.png" alt="Salát Coleslaw" class="food-image">
+                            <div class="price-tag">39 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Salát Coleslaw <span class="weight">150g</span></h3>
+                        </div>
+                    </article>
+
+                    <article class="food-card side-card">
+                        <div class="img-wrapper">
+                            <img src="assets/maso.png" alt="Maso navíc" class="food-image">
+                            <div class="price-tag">85 Kč</div>
+                        </div>
+                        <div class="food-details">
+                            <h3 class="food-name">Maso navíc <span class="weight">175g</span></h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+        <section class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4901.813142299633!2d16.090111806476735!3d50.09719240830091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddbbdd74ee56d%3A0xd5b6a28c98f34bc7!2sHuja%20Burger!5e0!3m2!1scs!2scz!4v1691768922115!5m2!1scs!2scz" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+    <!-- Patička -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <!-- Sloupec 1: Značka -->
+            <div class="footer-brand">
+                <img src="assets/huja burger logo 2.png" alt="Huja Burger Logo" class="footer-logo">
+                <p>Nejlepší burgery v Borohrádku a širokém okolí. Přijďte ochutnat legendární hovězí a originální bulky.</p>
+            </div>
+            
+            <!-- Sloupec 2: Rychlé odkazy -->
+            <div class="footer-links">
+                <h4>Odkazy</h4>
+                <ul>
+                    <li><a href="#info">Otevírací doba</a></li>
+                    <li><a href="#menu">Burger menu</a></li>
+                    <li><a href="#sides">Přílohy</a></li>
+                </ul>
+            </div>
+
+            <!-- Sloupec 3: Kontakt -->
+            <div class="footer-contact">
+                <h4>Kontakt</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Čechova 264, Borohrádek</p>
+                <p><i class="fa-solid fa-phone"></i> +420 776 422 538</p>
+            </div>
+            
+            <!-- Sloupec 4: Sítě -->
+            <div class="footer-socials">
+                <h4>Sledujte nás</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100057360073443" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Huja Burger. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+</body>
+</html>
